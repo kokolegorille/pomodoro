@@ -1,0 +1,53 @@
+:root {
+    --session-color: red;
+    --break-color: green;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.pomodoro {
+    h4 { 
+        margin-top: 1rem;
+        margin-bottom: 0px; 
+    }
+    button {
+        width: 5rem;
+        height: 3rem;
+        margin: 0.5rem;
+    }
+    .digit { padding: 0.5rem; }
+    .flex { 
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+    }
+    .flex-column {
+        flex-direction: column;
+        align-items: center;
+    }
+    .timer {
+        font-family: kaushan_script;
+        border: solid 3px;
+        border-radius: 25px;
+        width: 20rem;
+        font-size: 2rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        p {
+            margin-bottom: 1rem;
+        }
+    }
+    .in-session { 
+        color: var(--session-color);
+        border-color: var(--session-color); 
+    }
+    .in-break { 
+        color: var(--break-color);
+        border-color: var(--break-color); 
+    }
+}

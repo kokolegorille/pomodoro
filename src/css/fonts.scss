@@ -1,0 +1,21 @@
+@font-face {
+    font-family: roboto;
+    src: url("../fonts/roboto.ttf") format("truetype"); /* For IE */
+    src: local("roboto"), url("../fonts/roboto.ttf") format("truetype"); /* For non-IE */
+}
+
+@font-face {
+    font-family: oswald;
+    src: url("../fonts/oswald.ttf") format("truetype"); /* For IE */
+    src: local("oswald"), url("../fonts/oswald.ttf") format("truetype"); /* For non-IE */
+}
+
+@font-face {
+    font-family: kaushan_script;
+    src: url("../fonts/kaushan_script.ttf") format("truetype"); /* For IE */
+    src: local("kaushan_script"), url("../fonts/kaushan_script.ttf") format("truetype"); /* For non-IE */
+}
+
+.roboto { font-family: roboto; }
+.kaushan { font-family: kaushan_script; }
+.oswald { font-family: oswald; }
