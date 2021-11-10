@@ -10,7 +10,8 @@
         <meta name="description" content="Webpack 5 Starter Kit">
         <meta name="keywords" content="Webpack 5 Starter Kit">
         <meta name="author" content="Koko le gorille">
-        <meta http-equiv="Content-Security-Policy" content="script-src 'self';">
+        <!-- Fix CSS loading issue: https://github.com/froala/angular-froala/issues/170 -->
+        <base href="/">
         <title>Pomodoro Clock</title>
     </head>
     <body>

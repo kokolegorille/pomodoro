@@ -1,7 +1,10 @@
 const path = require('path')
 const { app, BrowserWindow } = require('electron')
+const serve = require('electron-serve');
 
 let mainWindow
+
+const loadURL = serve({directory: 'public'})
 
 function createMainWindow () {
     mainWindow = new BrowserWindow({
@@ -17,12 +20,15 @@ function createMainWindow () {
 
     mainWindow.setMenuBarVisibility(false)
 
-    let indexPath
+    // let indexPath
 
-    // indexPath = `file://${__dirname}/public/index.html`
-    indexPath = path.join(__dirname, "./public/index.html")
+    // // indexPath = `file://${__dirname}/public/index.html`
+    // indexPath = path.join(__dirname, "./public/index.html")
 
-    mainWindow.loadFile(indexPath)
+    // mainWindow.loadFile(indexPath)
+
+    loadURL(mainWindow)
+
 
     // Don't show until we are ready and loaded
 	mainWindow.once('ready-to-show', () => {

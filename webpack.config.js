@@ -61,7 +61,7 @@ module.exports = (_env, options) => {
                     test: /\.(png|svg|jpe?g|gif)(\?.*$|$)/,
                     type: "asset/resource",
                     generator: {
-                        filename: "images/[contenthash][ext][query]"
+                        filename: "./images/[contenthash][ext][query]"
                     }
                 },
                 // Load fonts
@@ -69,7 +69,7 @@ module.exports = (_env, options) => {
                     test: /\.(woff|woff2|eot|ttf|otf)$/,
                     type: "asset/resource",
                     generator: {
-                        filename: "fonts/[contenthash][ext][query]"
+                        filename: "./fonts/[contenthash][ext][query]"
                     }
                 }
             ]
@@ -77,10 +77,10 @@ module.exports = (_env, options) => {
         plugins: [
             new HtmlWebpackPlugin({
                 filename: "index.html",
-                template: "src/index.html",
+                template: "./src/index.html",
                 inject: "body",
             }),
-            new MiniCssExtractPlugin({ filename: "css/app.css" }),
+            new MiniCssExtractPlugin({ filename: "./css/app.css" }),
         ],
         devServer: {
             // New devserver 4 syntax!
@@ -92,7 +92,7 @@ module.exports = (_env, options) => {
                 overlay: true,
                 progress: false,
             },
-            hot: true,
+            // hot: true,
             historyApiFallback: true,
             open: true,
             // port: 8080,
