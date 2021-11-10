@@ -3,11 +3,13 @@
   "name": "pomodoro",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "main.js",
   "scripts": {
-    "deploy": "webpack --mode production",
-    "watch": "webpack --mode development --watch",
-    "start": "webpack serve --mode development"
+    "prod": "webpack --mode production && electron .",
+    "start": "webpack serve --mode development",
+    "build": "webpack --mode production",
+    "package": "npm run build",
+    "postpackage": "electron-packager ./ --out=./release-builds"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +25,8 @@
     "babel-loader": "^8.2.3",
     "css-loader": "^6.5.1",
     "css-minimizer-webpack-plugin": "^3.1.2",
+    "electron": "^15.3.1",
+    "electron-packager": "^15.4.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.4.4",
     "sass": "^1.43.4",
