@@ -63,6 +63,7 @@ const reducer = (state, action) => {
                 status: INIT,
                 timerMinutes: state.sessionLength,
                 timerSeconds: 0,
+                sessionCount: 0,
             }
             break
         case TICK:
