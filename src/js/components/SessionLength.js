@@ -6,13 +6,14 @@ const SessionLength = () => {
     const { state, actions } = usePomodoro()
 
     return (
-    <section className="flex flex-column">
-        <h4>Session Length</h4>
-        <div className="flex">
-            <button onClick={actions.downSessionLength}>Down</button>
-            <p className="digit">{ state.sessionLength }</p>
-            <button onClick={actions.upSessionLength}>Up</button>
-        </div>
+    <section className="box flex flex-column">
+        <h4>Session Length : { state.sessionLength }</h4>
+        <input 
+            type="range" 
+            value={state.sessionLength}
+            onChange={e => actions.setSessionLength(e.target.value)}
+            min="1" 
+            max="60"/>
     </section>
     )
 }

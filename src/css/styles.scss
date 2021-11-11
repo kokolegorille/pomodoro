@@ -1,28 +1,44 @@
 :root {
+    --bg-color: #30384b;
+    --color: #eee;
     --session-color: red;
     --break-color: green;
+    --script: kaushan_script;
 }
+
+body {
+    background-color: var(--bg-color);
+    color: var(--color);
+}
+
 main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 90vh;
 }
 
 .pomodoro {
-    h4 { 
-        margin-top: 1rem;
-        margin-bottom: 0px; 
+    h4 {
+        font-size: 1.2rem;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
     }
     button {
-        width: 5rem;
-        height: 3rem;
-        margin: 0.5rem;
+        background-color: transparent;
+        color: rgba(255, 255, 255, 0.8);
+        border: 0;
+        display: inline-block;
+        width: 80px;
+        cursor: pointer;
+
+        &:disabled {
+            color: rgba(255, 255, 255, 0.2);
+        }
     }
-    .digit { padding: 0.5rem; }
-    .flex { 
-        display: flex; 
+    p { margin: 0.5rem; }
+    .flex {
+        display: flex;
         justify-content: center;
         align-items: center;
     }
@@ -31,23 +47,10 @@ main {
         align-items: center;
     }
     .timer {
-        font-family: kaushan_script;
-        border: solid 3px;
-        border-radius: 25px;
-        width: 20rem;
-        font-size: 2rem;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        p {
-            margin-bottom: 1rem;
-        }
+        font-family: var(--script);
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        h4 { font-size: 2rem; }
     }
-    .in-session { 
-        color: var(--session-color);
-        border-color: var(--session-color); 
-    }
-    .in-break { 
-        color: var(--break-color);
-        border-color: var(--break-color); 
-    }
+    .box { margin: 0.5rem 0.5rem; }
 }

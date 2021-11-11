@@ -15,12 +15,10 @@ import Actions from "./components/Actions";
 const App = () => {
     return (
         <main className="pomodoro roboto">
-            <h1>Pomodoro Clock</h1>
-
             <PomodoroProvider>
-                <div className="flex">
-                    <BreakInterval />
+                <div className="box flex">
                     <SessionLength />
+                    <BreakInterval />
                 </div>
                 <Timer />
                 <Actions />
