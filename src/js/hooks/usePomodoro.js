@@ -9,20 +9,11 @@ const SKIP = 'SKIP'
 const REFRESH = 'REFRESH'
 const TICK = 'TICK'
 
-// Change values by +- 1 unit
-// const UP_BREAK_INTERVAL = 'UP_BREAK_INTERVAL'
-// const DOWN_BREAK_INTERVAL = 'DOWN_BREAK_INTERVAL'
-// const UP_SESSION_LENGTH = 'UP_SESSION_LENGTH'
-// const DOWN_SESSION_LENGTH = 'DOWN_SESSION_LENGTH'
-
 // Set values
 const SET_BREAK_INTERVAL = 'SET_BREAK_INTERVAL'
 const SET_SESSION_LENGTH = 'SET_SESSION_LENGTH'
 
 // In minutes
-
-// const MIN = 1
-// const MAX = 60
 
 const BREAK = 5
 const SESSION = 25
@@ -40,7 +31,6 @@ const defaultState = {
 
 const reducer = (state, action) => {
     let newState
-    // let newBreakInterval, newSessionLength
 
     switch (action.type) {
         case PLAY:
@@ -105,41 +95,6 @@ const reducer = (state, action) => {
             }
             break
 
-        // case UP_BREAK_INTERVAL:
-        //     newBreakInterval = Math.min(state.breakInterval + 1, MAX)
-        //     newState = {
-        //         ...state,
-        //         breakInterval: newBreakInterval,
-        //     }
-        //     break
-        // case DOWN_BREAK_INTERVAL:
-        //     newBreakInterval = Math.max(state.breakInterval - 1, MIN)
-        //     newState = {
-        //         ...state,
-        //         breakInterval: newBreakInterval,
-        //     }
-        //     break
-        // case UP_SESSION_LENGTH:
-        //     newSessionLength = Math.min(state.sessionLength + 1, MAX)
-        //     newState = {
-        //         ...state,
-        //         sessionLength: newSessionLength,
-        //         timerMinutes: state.status === 'INIT' ? 
-        //             newSessionLength : 
-        //             state.timerMinutes
-        //     }
-        //     break
-        // case DOWN_SESSION_LENGTH:
-        //     newSessionLength = Math.max(state.sessionLength - 1, MIN)
-        //     newState = {
-        //         ...state,
-        //         sessionLength: newSessionLength,
-        //         timerMinutes: state.status === 'INIT' ? 
-        //             newSessionLength : 
-        //             state.timerMinutes
-        //     }
-        //     break
-
         case SET_BREAK_INTERVAL:
             newState = {
                 ...state,
@@ -172,20 +127,11 @@ const pomodoroReducer = (initialState = defaultState) => {
     const skip = () => dispatch({ type: SKIP })
     const tick = () => dispatch({ type: TICK })
 
-    // const upBreakInterval = () => dispatch({ type: UP_BREAK_INTERVAL })
-    // const downBreakInterval = () => dispatch({ type: DOWN_BREAK_INTERVAL })
-    // const upSessionLength = () => dispatch({ type: UP_SESSION_LENGTH })
-    // const downSessionLength = () => dispatch({ type: DOWN_SESSION_LENGTH })
-
     const setBreakInterval = payload => dispatch({ type: SET_BREAK_INTERVAL, payload })
     const setSessionLength = payload => dispatch({ type: SET_SESSION_LENGTH, payload })
 
     const actions = { 
         play, pause, refresh, skip, tick,
-
-        // upBreakInterval, downBreakInterval,
-        // upSessionLength, downSessionLength,
-
         setBreakInterval, setSessionLength,
     }
     return { state, actions }

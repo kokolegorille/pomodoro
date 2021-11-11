@@ -1,8 +1,10 @@
 # Pomodoro Clock
 
-To manage my remote working session :-)
+Building a pomodoro clock to manage my remote working session :-)
 
-Written in React, bundled with webpack 5.
+Written in React, bundled with Webpack 5, packaged to application with Electron.
+
+usePomodoro custom hook.
 
 ## To start server, run...
 
@@ -21,3 +23,5 @@ $ npm run prod
 ```
 $ npm run package
 ```
+
+The result is in release-builds
